@@ -20,4 +20,5 @@ def index():
     return "WebSocket Chat Server Running"
 
 if __name__ == '__main__':
-    socketio.run(app, host='0.0.0.0', port=5000)
+    socketio.run(app, host='0.0.0.0', port=5000,
+                 certfile="/etc/ssl/cert.pem", keyfile="/etc/ssl/key.pem", ssl_context="adhoc")
